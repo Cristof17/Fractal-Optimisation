@@ -1,0 +1,34 @@
+Cristofor Rotsching 333CA
+
+Pentru implementarea temei am optimizat urmatoarele:
+
+Fractal.c
+	Functia Process_Fractal(): implementarea initiala intoarce dimensiunea structurii
+	primite ca parametru prin pozitionarea a 2 pointeri. Apelurile functiei le-am 
+	inlocuit direct cu sizeof(struct Fractal) pentru optimizarea schimbarii de context.
+		
+	Array-ul colors este redundant asemenea variabilei used.
+
+	In interiorul Functiei Wrap() se itera pana la o valoare stabilita pentru
+	a decrementa o valoare. Optimizarea consta in scadearea valorii de iteratie
+	direct din variabila ret.
+
+	Asignarea valorii de 0 fiecarui element din vectorul colors din functia
+	acquire_line este de asemenea redundanta.
+
+	In interiorul functiei iterate() sunt prea multe alocari pe stiva si dealocari 
+	prin apelarea diferitelor functii pentru calcularea valorii length. 
+	Pentru aceasta am implementat operatiile matematice pentru inmultirea a doua
+	numere complexe si am inlocuit apelul functiei cabs() cu formula de calculare folosita
+	de algorimul specific Mandelbrot Set.
+
+	
+Image.c
+
+	In interiorul sursei Image.c in functia image_create() se aloca memorie pentru
+	variabila header si se itera pe fiecare element al sau pentru a initializa
+	array-ul cu 0, apoi se facea free(). Sunt operatii redundante.
+
+	Am combinat cele 2 for-uri din interiorul functiei image_close() astfel incat 
+	sa nu se execute 2 operatii care merg de la 0 la image->array_size in doua for-uri 
+	diferite.
