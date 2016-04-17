@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HWDIR=homework
-RUNS=1
+RUNS=5
 
 prepare() {
     #build the ckecker
@@ -9,10 +9,10 @@ prepare() {
 
     #prepare the homework for testing
     mkdir $HWDIR
-    #mv *.zip $HWDIR
-    #cp checker $HWDIR
+    mv *.zip $HWDIR
+    cp checker $HWDIR
     cd $HWDIR
-    #unzip *.zip
+    unzip *.zip
     cp ../../fractal ./
     cd ..
 }

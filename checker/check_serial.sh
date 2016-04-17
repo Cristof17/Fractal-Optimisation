@@ -3,6 +3,6 @@
 source functions.sh
 
 prepare
-#build_serial
+build_serial
 run_homework
 cleanup

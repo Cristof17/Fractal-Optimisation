@@ -1,0 +1,5 @@
+/opt/GE2011.11p1/NCIT-Cluster/spool/nehalem-wn21/job_scripts/804698: line 3: functions.sh: No such file or directory
+/opt/GE2011.11p1/NCIT-Cluster/spool/nehalem-wn21/job_scripts/804698: line 5: prepare: command not found
+/opt/GE2011.11p1/NCIT-Cluster/spool/nehalem-wn21/job_scripts/804698: line 6: build_serial: command not found
+/opt/GE2011.11p1/NCIT-Cluster/spool/nehalem-wn21/job_scripts/804698: line 7: run_homework: command not found
+/opt/GE2011.11p1/NCIT-Cluster/spool/nehalem-wn21/job_scripts/804698: line 8: cleanup: command not found

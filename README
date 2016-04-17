@@ -24,6 +24,11 @@ Fractal.c
 	numere complexe si am inlocuit apelul functiei cabs() cu formula de calculare 
 	(x^2 + y^2)^(1/2). Daca scoatem logaritm din aceasta functie rezulta 1/2 * log
 	= 0.5 * log
+
+	Operatiile ce implica numere complexe, inmultirea si adunarea le-am scris conform
+	forulelor matematice doarece prin analiza cu perf am vazut ca a doua cea mai apelata
+	functie 30% din timpul de executie este petrecut in functia de inmutire a doua numere
+	complexe
 	
 Image.c
 
