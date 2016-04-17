@@ -3,9 +3,11 @@ Cristofor Rotsching 333CA
 Pentru implementarea temei am optimizat urmatoarele:
 
 Fractal.c
-	Functia Process_Fractal(): implementarea initiala intoarce dimensiunea structurii
-	primite ca parametru prin pozitionarea a 2 pointeri. Apelurile functiei le-am 
-	inlocuit direct cu sizeof(struct Fractal) pentru optimizarea schimbarii de context.
+	Functia Prepare_Fractal: implementarea initiala apela functia Process_Fractal care
+	intoarce dimensiunea structurii	primite ca parametru prin pozitionarea a 2 pointeri.
+	Apelurile functiei le-am inlocuit direct cu sizeof(struct Fractal) pentru optimizarea schimbarii de context.
+	Deoarece folosirea functiei Prepare_Fractal este redundanta, functiile folosite de in corpul acesteia 
+	sunt de asemenea redundate.
 		
 	Array-ul colors este redundant asemenea variabilei used.
 
@@ -19,9 +21,9 @@ Fractal.c
 	In interiorul functiei iterate() sunt prea multe alocari pe stiva si dealocari 
 	prin apelarea diferitelor functii pentru calcularea valorii length. 
 	Pentru aceasta am implementat operatiile matematice pentru inmultirea a doua
-	numere complexe si am inlocuit apelul functiei cabs() cu formula de calculare folosita
-	de algorimul specific Mandelbrot Set.
-
+	numere complexe si am inlocuit apelul functiei cabs() cu formula de calculare 
+	(x^2 + y^2)^(1/2). Daca scoatem logaritm din aceasta functie rezulta 1/2 * log
+	= 0.5 * log
 	
 Image.c
 

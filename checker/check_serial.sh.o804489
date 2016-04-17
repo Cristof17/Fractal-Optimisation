@@ -20,6 +20,6 @@ Checking Image-104.ppm
 Checking Image-105.ppm
 ----------------------
 
->>>>>> Iteration 1 done in 107461079091 nanoseconds <<<<<<
+>>>>>> Iteration 1 done in 98687743378 nanoseconds <<<<<<
 
 rm -rf ../Image.o checker
