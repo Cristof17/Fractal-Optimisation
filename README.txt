@@ -28,7 +28,7 @@ Fractal.c
 	Operatiile ce implica numere complexe, inmultirea si adunarea le-am scris conform
 	forulelor matematice doarece prin analiza cu perf am vazut ca a doua cea mai apelata
 	functie 30% din timpul de executie este petrecut in functia de inmutire a doua numere
-	complexe
+	complexe.
 	
 Image.c
 
@@ -36,6 +36,7 @@ Image.c
 	variabila header si se itera pe fiecare element al sau pentru a initializa
 	array-ul cu 0, apoi se facea free(). Sunt operatii redundante.
 
-	Am combinat cele 2 for-uri din interiorul functiei image_close() astfel incat 
-	sa nu se execute 2 operatii care merg de la 0 la image->array_size in doua for-uri 
-	diferite.
+	Cele 2 for-uri din interiorul functiei image_close() le-am redusdoar un singur for(), iar
+	in locul for-ului care scrie caracter cu caracter in fisierul de output, am inlocuit cu 
+	pe toata lungimea array-ul de culori astfel incat sa nu mai fie necesara calcularea
+	iteratorului i.

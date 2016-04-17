@@ -230,16 +230,16 @@ void *Fractal_Render(void *arg)
 	
 		for (unsigned int x = 0; x < fractal->width; x++) {
 		    
-			long double num_real = ((x + 0.5l) / fractal->width - 0.5l) * 2.0l;
-			long double num_imag = ((line + 0.5l) / fractal->height - 0.5l) * 2.0l * ratio;
+			register long double num_real = ((x + 0.5l) / fractal->width - 0.5l) * 2.0l;
+			register long double num_imag = ((line + 0.5l) / fractal->height - 0.5l) * 2.0l * ratio;
 			//long double complex num = num_real + num_imag * I;
 			//num *= fractal->zoom;
 			//num += fractal->position;
 			
 			register long double fractal_zoom_x = creall(fractal->zoom);
 			register long double fractal_zoom_y = cimagl(fractal->zoom);
-			long double position_x = creall(fractal->position);
-			long double position_y = cimagl(fractal->position);
+			register long double position_x = creall(fractal->position);
+			register long double position_y = cimagl(fractal->position);
 
 			temp = num_real;
 			num_real = (num_real * fractal_zoom_x) - (num_imag * fractal_zoom_y) + position_x;
@@ -255,8 +255,8 @@ void *Fractal_Render(void *arg)
 				     //      colors[i] = i;
                        			//}
                     		   // }
-				long double offset_real = (((ax + 0.5l) / ANTIALIASING - 0.5l) * 2.0l / fractal->width);
-				long double offset_imag = (((ay + 0.5l) / ANTIALIASING - 0.5l) * 2.0l / fractal->height) * ratio;
+				register long double offset_real = (((ax + 0.5l) / ANTIALIASING - 0.5l) * 2.0l / fractal->width);
+				register long double offset_imag = (((ay + 0.5l) / ANTIALIASING - 0.5l) * 2.0l / fractal->height) * ratio;
 				
 				//long double complex offset = offset_real + offset_imag * I;
 				//offset *= fractal->zoom;
@@ -269,7 +269,7 @@ void *Fractal_Render(void *arg)
 				num_real += offset_real;
 				num_imag += offset_imag;
 
-				long double complex num = num_real + num_imag * I;	
+				register long double complex num = num_real + num_imag * I;	
 				
 				acc += iterate(num);
 				}

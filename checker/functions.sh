@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HWDIR=homework
-RUNS=5
+RUNS=1
 
 prepare() {
     #build the ckecker

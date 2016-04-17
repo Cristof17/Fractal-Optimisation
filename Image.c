@@ -167,8 +167,9 @@ void image_close(struct Image *image)
 	for (unsigned int i=0; i<image->array_size; i++) {
 	    if (image->map[i] == 0) 
 	        artifacts++;
-	    write(image->fd, image->array + i, sizeof(char));	    
+	    //write(image->fd, image->array + i, sizeof(char));	    
 	}
+    	write(image->fd, image->array, image->array_size * sizeof(char));
 	
 	close(image->fd);
 	free(image);

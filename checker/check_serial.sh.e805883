@@ -1,0 +1,8 @@
+mv: cannot stat `*.zip': No such file or directory
+unzip:  cannot find or open *.zip, *.zip.zip or *.zip.ZIP.
+
+No zipfiles found.
+Error loading file Image-102.ppm
+Error loading file Image-103.ppm
+Error loading file Image-104.ppm
+Error loading file Image-105.ppm
